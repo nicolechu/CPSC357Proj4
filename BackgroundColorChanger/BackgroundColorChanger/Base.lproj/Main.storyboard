@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hjX-7m-3sO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ZxY-ao-YJY">
+            <objects>
+                <tabBarController id="hjX-7m-3sO" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ej9-ig-CSw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="3Fd-ne-gxQ"/>
+                        <segue destination="vQp-2q-CTh" kind="relationship" relationship="viewControllers" id="Bv3-Xx-56w"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="31o-8D-WKY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1781" y="325"/>
+        </scene>
+        <!--Swatches-->
+        <scene sceneID="D2Q-5g-uui">
+            <objects>
+                <collectionViewController id="vQp-2q-CTh" customClass="SwatchesViewController" customModule="BackgroundColorChanger" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Als-Yn-Zq8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m2F-GR-YPT">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SwatchCell" id="iUJ-KS-QIS">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="78i-cI-X0m">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="vQp-2q-CTh" id="LAF-de-VA7"/>
+                            <outlet property="delegate" destination="vQp-2q-CTh" id="xUY-Yx-4GX"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Swatches" image="square.grid.2x2.fill" catalog="system" id="MZa-wM-dGK"/>
+                    <connections>
+                        <outlet property="MainViewController" destination="Als-Yn-Zq8" id="O32-e8-E8q"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vAD-o5-Fxo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-886" y="649"/>
+        </scene>
+        <!--Color Picker-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BackgroundColorChanger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="dtA-sj-EA8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="881"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lVx-Yf-cIi">
+                                        <rect key="frame" x="42" y="357" width="330" height="384"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="zdM-we-Kio">
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="70"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="255" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jH7-jg-L3R">
+                                                        <rect key="frame" x="0.0" y="0.0" width="330" height="34"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="doneButton" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="adjustInput:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="L0w-cg-b62"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="255" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="gJb-ln-Sl0">
+                                                        <rect key="frame" x="-2" y="40" width="334" height="31"/>
+                                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                                        <color key="thumbTintColor" systemColor="systemRedColor"/>
+                                                        <connections>
+                                                            <action selector="adjustSlider:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Fir-gF-Phl"/>
+                                                        </connections>
+                                                    </slider>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="qNt-gX-aRi">
+                                                <rect key="frame" x="0.0" y="90" width="330" height="70"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="255" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0B-zp-VaN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="330" height="34"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="doneButton" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="adjustInput:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="UIh-j6-9Y3"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="255" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="Lih-QD-97Y">
+                                                        <rect key="frame" x="-2" y="40" width="334" height="31"/>
+                                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                                        <color key="thumbTintColor" systemColor="systemGreenColor"/>
+                                                        <connections>
+                                                            <action selector="adjustSlider:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="VW6-bq-kBn"/>
+                                                        </connections>
+                                                    </slider>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="oMy-dd-OWJ">
+                                                <rect key="frame" x="0.0" y="180" width="330" height="70"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="255" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jLE-5V-c56">
+                                                        <rect key="frame" x="0.0" y="0.0" width="330" height="34"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="doneButton" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="adjustInput:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="5vs-nR-5ja"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="255" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="qwE-Lq-EMU">
+                                                        <rect key="frame" x="-2" y="40" width="334" height="31"/>
+                                                        <color key="tintColor" systemColor="systemBlueColor"/>
+                                                        <color key="thumbTintColor" systemColor="systemBlueColor"/>
+                                                        <connections>
+                                                            <action selector="adjustSlider:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Kqp-sH-HKs"/>
+                                                        </connections>
+                                                    </slider>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jcl-FL-fMj">
+                                                <rect key="frame" x="0.0" y="270" width="330" height="64"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="255" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nbu-Pl-c0l">
+                                                        <rect key="frame" x="0.0" y="0.0" width="330" height="34"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="doneButton" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="adjustInput:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="0hL-zA-YL9"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="255" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="SG0-St-cI0">
+                                                        <rect key="frame" x="-2" y="34" width="334" height="31"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <action selector="adjustSlider:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="n8t-NE-UXr"/>
+                                                        </connections>
+                                                    </slider>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NV-kI-l5J">
+                                                <rect key="frame" x="0.0" y="354" width="330" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Save"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clickSave:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="tCQ-MT-YjH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lVx-Yf-cIi" secondAttribute="trailing" constant="42" id="2Hc-sF-bzc"/>
+                                    <constraint firstAttribute="bottom" secondItem="lVx-Yf-cIi" secondAttribute="bottom" constant="140" id="4lQ-NG-8ce"/>
+                                    <constraint firstItem="lVx-Yf-cIi" firstAttribute="leading" secondItem="dtA-sj-EA8" secondAttribute="leading" constant="42" id="EmB-yq-uc8"/>
+                                    <constraint firstAttribute="trailing" secondItem="lVx-Yf-cIi" secondAttribute="trailing" constant="42" id="RCi-So-xRv"/>
+                                    <constraint firstItem="lVx-Yf-cIi" firstAttribute="leading" secondItem="dtA-sj-EA8" secondAttribute="leading" constant="42" id="RTh-3P-9zX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dtA-sj-EA8" secondAttribute="bottom" constant="140" id="Tbv-DQ-VWm"/>
+                            <constraint firstItem="dtA-sj-EA8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="75" id="fpP-pe-k9b"/>
+                            <constraint firstItem="dtA-sj-EA8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="tls-aO-dcL"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Color Picker" image="paintpalette.fill" catalog="system" id="aZd-0A-PA4"/>
+                    <connections>
+                        <outlet property="inputA" destination="Nbu-Pl-c0l" id="O1U-Pg-ZTg"/>
+                        <outlet property="inputB" destination="jLE-5V-c56" id="I8l-cS-NA8"/>
+                        <outlet property="inputG" destination="Y0B-zp-VaN" id="Pmk-pd-vml"/>
+                        <outlet property="inputR" destination="jH7-jg-L3R" id="suN-gf-L69"/>
+                        <outlet property="mainView" destination="dtA-sj-EA8" id="3x0-ya-N8P"/>
+                        <outlet property="saveButton" destination="6NV-kI-l5J" id="Xze-fk-L5X"/>
+                        <outlet property="sliderA" destination="SG0-St-cI0" id="Sk3-Eb-RVI"/>
+                        <outlet property="sliderB" destination="qwE-Lq-EMU" id="SWT-DT-vuR"/>
+                        <outlet property="sliderG" destination="Lih-QD-97Y" id="7Sy-FE-MbP"/>
+                        <outlet property="sliderR" destination="gJb-ln-Sl0" id="Q3H-Mw-h3l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-888.40579710144937" y="-38.169642857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="paintpalette.fill" catalog="system" width="128" height="105"/>
+        <image name="square.grid.2x2.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
